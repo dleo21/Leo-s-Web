@@ -37,7 +37,7 @@
       padding: 12px;
       border: 1px solid #555; /* Slightly lighter grey border */
       text-align: left;
-      transition: background-color 0.3s ease;
+      transition: background-color 1s ease;
     }
     th {
       background-color: #d4af37; /* Gold color for table header */
@@ -46,13 +46,14 @@
     tr:hover {
       background-color: #555; /* Dark grey hover color */
     }
-    /* Robot theme */
+     
     .robot-image {
       width: 100px;
       height: auto;
       display: block;
       margin: 0 auto;
     }
+
     /* Show table rows when intersecting */
     .table-row-visible {
       opacity: 1;
@@ -92,6 +93,115 @@
         </tr>
       </tbody>
     </table>
+
+    
+    <table class="table table-striped" id="skills-table2">
+      <thead>
+        <tr>
+          <th>Microsoft Office</th>
+          <th>Proficiency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>MS Word</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>Excel</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>Powerpoint</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td> </td>
+          <td>  </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="table table-striped" id="skills-table3">
+      <thead>
+        <tr>
+          <th>Language</th>
+          <th>Proficiency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HTML</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+          <td>Beginner</td>
+        </tr>
+        <tr>
+          <td>Python</td>
+          <td>Beginner</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="table table-striped" id="skills-table4">
+      <thead>
+        <tr>
+          <th>Language</th>
+          <th>Proficiency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HTML</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+          <td>Beginner</td>
+        </tr>
+        <tr>
+          <td>Python</td>
+          <td>Beginner</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="table table-striped" id="skills-table5">
+      <thead>
+        <tr>
+          <th>Language</th>
+          <th>Proficiency</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>HTML</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>CSS</td>
+          <td>Intermediate</td>
+        </tr>
+        <tr>
+          <td>JavaScript</td>
+          <td>Beginner</td>
+        </tr>
+        <tr>
+          <td>Python</td>
+          <td>Beginner</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
   <!-- Bootstrap JS and jQuery (optional, for Bootstrap features) -->
@@ -101,7 +211,7 @@
   
   <script>
     // Intersection Observer API
-    const table = document.getElementById('skills-table');
+    const tables = document.querySelectorAll('.table');
     const options = {
       threshold: 0.5
     };
@@ -116,7 +226,9 @@
       });
     }, options);
 
-    observer.observe(table);
+    tables.forEach(table => {
+      observer.observe(table);
+    });
   </script>
 </body>
 </html>
