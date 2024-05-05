@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Leo's Profile</title>
-  <!-- Bootstrap CSS -->
+  
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     /* Custom CSS */
@@ -17,13 +17,24 @@
       text-align: center;
       margin-top: 50px;
       color: #ccc; /* Light grey color for headings */
+       opacity: 0; /* Initially hidden */
+      transition: opacity 1s; /* Smooth transition */
     }
     h2 {
       color: #d4af37; /* Gold color */
+       opacity: 0; /* Initially hidden */
+      transition: opacity 1s; /* Smooth transition */
     }
-    p {
+    p 
+    {
       font-size: 18px;
       line-height: 1.6;
+      margin-top: 2em; /* Add space between paragraphs */
+       opacity: 0; /* Initially hidden */
+      transition: opacity 1s; /* Smooth transition */
+    }
+    .header-visible, .paragraph-visible {
+      opacity: 1;
     }
     table {
       margin: 20px auto;
@@ -196,6 +207,23 @@
         </tr>
       </tbody>
     </table>
+  <p>From my Sweet lovely cutie patotie : </p>
+  <p>"Hi to you there 😊"</p>
+  <p>"Just wondering these time how grateful I am to have you in my life, also I want to say thanks for all the unconditional love and support. I know how things get tough for us right now. But still, I am really happy to be with you."</p>
+  <p>"Thank you for accepting me the way I am!"</p>
+  <p>"Thank you for not judging me behind my dark story."</p>
+  <p>"Thank you for everything you’ve done for me."</p>
+  <p>Thank you for reminding how pretty I am genuinely."</p>
+  <p>"Thank you for taking care of me and spoiling me."</p>
+  <p>"Thank you for treating me like a Queen and loving me like an empress."</p>
+  <p>"Thank you for sharing tears with me."</p>
+  <p>"Thank you for the kind gesture to share with, all your act matters 😊"</p>
+  <p>"May the Lord anoint you with His favor and may all the work of your hands prosper. May the Lord blesses you more with the strength and grace. Again, thank you for your unconditional love 😘😘"</p>
+  <p>"If Lord permits, I’d love to see you and love you repeatedly."</p>
+  <p>"I want to keep you forever my love, please don’t ever leave me. I know that I am not the best person for you, but I know how to love you more than anything. I love you ❤️"</p>
+  <p>To my sweet lovely cutie patotiee everything you do, said, and caring.. you have melted my isolated heart. i love you so much</p>
+  <p>Thank you.. you are the best. i am still learning and continue working on so much things and your my fuel for my mind and heart. i will make you my inspiration for this..</p>
+  <p>I am still learning and continue fixing this website.. 🥰</p>
   </div>
 
   <!-- Bootstrap JS and jQuery (optional, for Bootstrap features) -->
@@ -205,6 +233,8 @@
   
   <script>
     // Intersection Observer API
+    const headerElements = document.querySelectorAll('h1');
+    const paragraphElements = document.querySelectorAll('p');
     const tables = document.querySelectorAll('.table');
     const options = {
       threshold: 0.5
@@ -222,6 +252,34 @@
 
     tables.forEach(table => {
       observer.observe(table);
+    });
+
+    const observer1 = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('header-visible');
+        } else {
+          entry.target.classList.remove('header-visible');
+        }
+      });
+    }, options);
+
+    headerElements.forEach(header => {
+      observer.observe(header);
+    });
+
+    const observer2 = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('paragraph-visible');
+        } else {
+          entry.target.classList.remove('paragraph-visible');
+        }
+      });
+    }, options);
+
+    paragraphElements.forEach(paragraph => {
+      observer2.observe(paragraph);
     });
   </script>
 </body>
