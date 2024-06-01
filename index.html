@@ -25,6 +25,17 @@
        opacity: 0; /* Initially hidden */
       transition: opacity 1s; /* Smooth transition */
     }
+    
+    .background-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    }
     p 
     {
       font-size: 18px;
@@ -207,6 +218,11 @@
         </tr>
       </tbody>
     </table>
+    <video class="background-video" autoplay="autoplay" playsinline="" muted="" loop>
+        <source src="https://www.similarweb.com/corp/wp-content/themes/similarcms_2_4/images/our-data/od-synthesis-bg-video.webm" type="video/webm">
+        <img class="od-synthesis__figure" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Synthesis" data-lazy-src="https://www.similarweb.com/corp/wp-content/themes/similarcms_2_4/images/our-data/od-synthesis-bg.png">
+        <noscript><img class="od-synthesis__figure" src="https://www.similarweb.com/corp/wp-content/themes/similarcms_2_4/images/our-data/od-synthesis-bg.png" alt="Synthesis"></noscript>
+    </video>
   <p>From my Sweet lovely cutie patotie : </p>
   <p>"Hi to you there 😊"</p>
   <p>"Just wondering these time how grateful I am to have you in my life, also I want to say thanks for all the unconditional love and support. I know how things get tough for us right now. But still, I am really happy to be with you."</p>
