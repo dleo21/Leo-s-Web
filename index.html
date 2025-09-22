@@ -1,85 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Leo's Profile</title>
-  
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Leo's Profile - Van Lieouein Delos Santos</title>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
   <style>
-     
     body {
       font-family: Arial, sans-serif;
-      background-color: #1e1e1e;  
-      color: #f0f0f0;  
+      background-color: #1e1e1e;
+      color: #f0f0f0;
     }
-    h1 {
+    h1, h2 {
       text-align: center;
-      margin-top: 50px;
-      background-color: black;  
-            color: white;  
-            border-radius: 20px;
-       opacity: 0;  
-      transition: opacity 2s; /* Smooth transition */
+      background-color: black;
+      color: white;
+      border-radius: 20px;
+      opacity: 0;
+      transition: opacity 2s;
+      padding: 15px;
     }
     h2 {
-      color: #d4af37; /* Gold color */
-        
-      transition: opacity 2s; /* Smooth transition */
+      background-color: transparent;
+      color: #d4af37;
+      margin-top: 25px;
     }
     .background-video {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transform: translate(-50%, -50%);
-    z-index: -1; /* Ensure the video is behind other content */
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transform: translate(-50%, -50%);
+      z-index: -1;
     }
-    p 
-    {
+    p {
       font-size: 18px;
       line-height: 1.6;
-      margin-top: 2em; /* Add space between paragraphs */
-       opacity: 0; /* Initially hidden */
-      transition: opacity 2s; /* Smooth transition */
-    }
-    .header-visible, .paragraph-visible {
-      opacity: 1;
+      margin-top: 1.5em;
+      opacity: 0;
+      transition: opacity 2s;
     }
     table {
       margin: 20px auto;
       border-collapse: collapse;
-      width: 80%;
-      background-color: #333; /* Dark grey background for table */
-      opacity: 0; /* Initially hidden */
-      transition: opacity 1s; /* Smooth transition */
+      width: 85%;
+      background-color: #333;
+      opacity: 0;
+      transition: opacity 1s;
+      color: #d4af37;
     }
     th, td {
       padding: 12px;
-      border: 1px solid #555; /* Slightly lighter grey border */
+      border: 1px solid #555;
       text-align: left;
-       color: #d4af37;
       transition: background-color 2s ease;
     }
     th {
-      background-color: #d4af37; /* Gold color for table header */
-      color: #1e1e1e; /* Dark background color for header text */
+      background-color: #d4af37;
+      color: #1e1e1e;
     }
     tr:hover {
-      background-color: #555; /* Dark grey hover color */
+      background-color: #555;
     }
     .masked-text {
-            background-color: black; /* Black background */
-            color: white; /* White text */
-            border-radius: 20px;
-	    opacity: 50%;
-            padding: 10px; /* Optional: Padding for better spacing */
-            display: inline-block; /* Ensures the background wraps the text properly */
-        }
-
-    /* Show table rows when intersecting */
+      background-color: black;
+      color: white;
+      border-radius: 20px;
+      opacity: 0.5;
+      padding: 10px;
+      display: inline-block;
+      margin-top: 10px;
+    }
+    .header-visible,
+    .paragraph-visible,
     .table-row-visible {
       opacity: 1;
     }
@@ -87,184 +83,139 @@
 </head>
 <body>
   <div class="container">
-    <h1 class="mt-5">Hi There, I'm Leo 😄 just my nickname</h1>
-     
-    <h2>About Me</h2>
-    <p>I am a beginner programmer and like to copy and analyze things 😂.</p>
-    <h2>Skills</h2>
-    <table class="table table-striped" id="skills-table">
-      <thead>
-        <tr>
-          <th>Language</th>
-          <th>Proficiency</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>HTML</td>
-          <td>Intermediate</td>
-        </tr>
-        <tr>
-          <td>CSS</td>
-          <td>Intermediate</td>
-        </tr>
-        <tr>
-          <td>JavaScript</td>
-          <td>Beginner</td>
-        </tr>
-        <tr>
-          <td>Python</td>
-          <td>Beginner</td>
-        </tr>
-      </tbody>
-    </table>
+    <h1 class="mt-5">Hi There, I'm Leo 😄 (Van Lieouein Delos Santos)</h1>
 
+    <h2>Contact Information</h2>
     
-    <table class="table table-striped" id="skills-table2">
+    <p>Contact Number: +63 956 785 9971</p>
+    <p>Email: <a href="mailto:Leod419@gmail.com" style="color:#d4af37;">Leod419@gmail.com</a></p>
+
+    <h2>Personal Details</h2>
+    <table>
+      <tbody>
+         
+        <tr><th>Place of Birth</th><td>Meycauyan, Bulacan</td></tr>
+        <tr><th>Height</th><td>5’8”</td></tr>
+         
+        <tr><th>Religion</th><td>Roman Catholic</td></tr>
+        <tr><th>Gender</th><td>Male</td></tr>
+        <tr><th>Languages/Dialects</th><td>Tagalog & English</td></tr>
+        <tr><th>Citizenship</th><td>Filipino</td></tr>
+        <tr><th>Civil Status</th><td>Single</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Educational Background</h2>
+    <table>
+      <tbody>
+        <tr><th>Tertiary</th><td>Bachelor of Science in Information Technology<br />University of Perpetual Help System - GMA Campus, San Gabriel, GMA Cavite<br />S.Y. 2012 – 2018</td></tr>
+        <tr><th>Secondary</th><td>Christ The King College of Cavite, Salawag, Dasmariñas, Cavite<br />S.Y. 2008 – 2012</td></tr>
+        <tr><th>Elementary</th><td>Paliparan 3 Elementary School, Dasmariñas, Cavite<br />S.Y. 2005 – 2007</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Key Strengths & Competencies</h2>
+    <ul>
+      <li>Good interpersonal skills</li>
+      <li>Time Flexible</li>
+      <li>Eager to learn</li>
+      <li>Fast learner</li>
+    </ul>
+
+    <h2>Skills</h2>
+    <table>
       <thead>
-        <tr>
-          <th>Microsoft Office</th>
-          <th>Proficiency</th>
-        </tr>
+        <tr><th>Skill</th><th>Details</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Programming</td><td>C++, Java, Kotlin, Visual Basic, and HTML</td></tr>
+        <tr><td>Computer Assembling and Maintenance</td><td>Experienced</td></tr>
+        <tr><td>Communication & Interpersonal Skills</td><td>Excellent</td></tr>
+        <tr><td>Technical Concept Generation</td><td>Clear & Precise</td></tr>
+        <tr><td>Microsoft Office</td><td>Word, Excel, PowerPoint - Technically Proficient</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Certificates</h2>
+    <ul>
+      <li><p class="masked-text">Mobile Android Programming (2013)</p></li>
+      <li><p class="masked-text">PLC Operation (2013)</p></li>
+      <li><p class="masked-text">ROBOTICS (2014)</p></li>
+      <li><p class="masked-text">Cloud Computing (2014)</p></li>
+      <li><p class="masked-text">Cyber Security (2015)</p></li>
+      <li><p class="masked-text">Unleash Your Potential (2014)</p></li>
+      <li><p class="masked-text">Seminar on Thesis and Capstone Writing for ITE Students and Advisers (2016)</p></li>
+    </ul>
+
+    <h2>Work Experience</h2>
+    <table>
+      <thead>
+        <tr><th>Position</th><th>Company</th><th>Duration</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Design / CAD Operator</td><td>Quest-Air Technology Phils., Inc.</td><td>March 20, 2020 – Sept 22, 2025</td></tr>
+        <tr><td>Design / CAD Operator</td><td>VEGA Project Philippines Inc.</td><td>May 17, 2019 – Nov 17, 2019</td></tr>
+        <tr><td>Accounting Auditor</td><td>Sonic Steel Industries Inc.</td><td>Aug 7, 2018 – May 10, 2019</td></tr>
+        <tr><td>On Job Trainee</td><td>P.A. Alvarez Properties and Development Corporation</td><td>July 15, 2016 – March 17, 2017</td></tr>
+      </tbody>
+    </table>
+
+    <h2>Character References</h2>
+    <table>
+      <thead>
+        <tr><th>Name</th><th>Position</th><th>Contact Info</th></tr>
       </thead>
       <tbody>
         <tr>
-          <td>MS Word</td>
-          <td>Intermediate</td>
+          <td>Mrs. Mary Grace N. Barbecho</td>
+          <td>Thesis Adviser, University of Perpetual Help System Jonelta-GMA Campus</td>
+          <td>+639192043978</td>
         </tr>
         <tr>
-          <td>Excel</td>
-          <td>Intermediate</td>
-        </tr>
-        <tr>
-          <td>Powerpoint</td>
-          <td>Intermediate</td>
-        </tr>
-        <tr>
-          <td> </td>
-          <td>  </td>
+          <td>Ms. Gestine May C. Abulencia</td>
+          <td>Human Resource Manager, Quest-Air Technology Phils., Inc.</td>
+          <td>+63965-956-8578</td>
         </tr>
       </tbody>
     </table>
 
-    <table class="table table-striped" id="skills-table3">
-      <thead>
-        <tr>
-          <th>         </th>
-          <th>P         </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>         </td>
-          <td>         </td>
-        </tr>
-        <tr>
-          <td>         </td>
-          <td>         </td>
-        </tr>
-        <tr>
-          <td>         </td>
-          <td>         </td>
-        </tr>
-        <tr>
-          <td>         </td>
-          <td>         /td>
-        </tr>
-      </tbody>
-    </table>
-
-    <table class="table table-striped" id="skills-table4">
-      <thead>
-        <tr>
-          <th>         </th>
-          <th>         </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>         </td>
-          <td>         </td>
-        </tr>
-        <tr>
-          <td>         </td>
-          <td>         </td>
-        </tr>
-        <tr>
-          <td>         </td>
-          <td>         </td>
-        </tr>
-        <tr>
-          <td>         </td>
-          <td>         </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <table class="table table-striped" id="skills-table5">
-      <thead>
-        <tr>
-          <th>         </th>
-          <th>         </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>         </td>
-          <td>         </td>
-        </tr>
-        <tr>
-          <td>         </td>
-          <td>         </td>
-        </tr>
-        <tr>
-          <td>         </td>
-          <td>         </td>
-        </tr>
-        <tr>
-          <td>         </td>
-          <td>         </td>
-        </tr>
-      </tbody>
-
-    </table>
-<video class="background-video" autoplay="autoplay" playsinline="" muted="" loop>
-        <source src="https://www.similarweb.com/corp/wp-content/themes/similarcms_2_4/images/our-data/od-synthesis-bg-video.webm" type="video/webm">
-        <img class="od-synthesis__figure" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E" alt="Synthesis" data-lazy-src="https://www.similarweb.com/corp/wp-content/themes/similarcms_2_4/images/our-data/od-synthesis-bg.png">
-        <noscript><img class="od-synthesis__figure" src="https://www.similarweb.com/corp/wp-content/themes/similarcms_2_4/images/our-data/od-synthesis-bg.png" alt="Synthesis"></noscript>
+    <video class="background-video" autoplay playsinline muted loop>
+      <source src="https://www.similarweb.com/corp/wp-content/themes/similarcms_2_4/images/our-data/od-synthesis-bg-video.webm" type="video/webm" />
+      <img src="https://www.similarweb.com/corp/wp-content/themes/similarcms_2_4/images/our-data/od-synthesis-bg.png" alt="Synthesis" />
     </video>
-  <p class="masked-text">From my Sweet lovely cutie patotie : </p>
-  <p class="masked-text">"Hi to you there 😊"</p>
-  <p class="masked-text">"Just wondering these time how grateful I am to have you in my life, also I want to say thanks for all the unconditional love and support. I know how things get tough for us right now. But still, I am really happy to be with you."</p>
-  <p class="masked-text">"Thank you for accepting me the way I am!"</p>
-  <p class="masked-text">"Thank you for not judging me behind my dark story."</p>
-  <p class="masked-text">"Thank you for everything you’ve done for me."</p>
-  <p class="masked-text">Thank you for reminding how pretty I am genuinely."</p>
-  <p class="masked-text">"Thank you for taking care of me and spoiling me."</p>
-  <p class="masked-text">"Thank you for treating me like a Queen and loving me like an empress."</p>
-  <p class="masked-text">"Thank you for sharing tears with me."</p>
-  <p class="masked-text">"Thank you for the kind gesture to share with, all your act matters 😊"</p>
-  <p class="masked-text">"May the Lord anoint you with His favor and may all the work of your hands prosper. May the Lord blesses you more with the strength and grace. Again, thank you for your unconditional love 😘😘"</p>
-  <p class="masked-text">"If Lord permits, I’d love to see you and love you repeatedly."</p>
-  <p class="masked-text">"I want to keep you forever my love, please don’t ever leave me. I know that I am not the best person for you, but I know how to love you more than anything. I love you ❤️"</p>
-  <p class="masked-text">To my sweet lovely cutie patotiee everything you do, said, and caring.. you have melted my isolated heart. i love you so much</p>
-  <p class="masked-text">Thank you.. you are the best. i am still learning and continue working on so much things and your my fuel for my mind and heart. i will make you my inspiration for this..</p>
-  <p class="masked-text">I am still learning and continue fixing this website.. 🥰</p>
+
+    <!-- Masked text personal messages -->
+    <p class="masked-text">From my Sweet lovely cutie patotie :</p>
+    <p class="masked-text">"Hi to you there 😊"</p>
+    <p class="masked-text">"Just wondering these time how grateful I am to have you in my life, also I want to say thanks for all the unconditional love and support. I know how things get tough for us right now. But still, I am really happy to be with you."</p>
+    <p class="masked-text">"Thank you for accepting me the way I am!"</p>
+    <p class="masked-text">"Thank you for not judging me behind my dark story."</p>
+    <p class="masked-text">"Thank you for everything you’ve done for me."</p>
+    <p class="masked-text">"Thank you for reminding how pretty I am genuinely."</p>
+    <p class="masked-text">"Thank you for taking care of me and spoiling me."</p>
+    <p class="masked-text">"Thank you for treating me like a Queen and loving me like an empress."</p>
+    <p class="masked-text">"Thank you for sharing tears with me."</p>
+    <p class="masked-text">"Thank you for the kind gesture to share with, all your act matters 😊"</p>
+    <p class="masked-text">"May the Lord anoint you with His favor and may all the work of your hands prosper. May the Lord blesses you more with the strength and grace. Again, thank you for your unconditional love 😘😘"</p>
+    <p class="masked-text">"If Lord permits, I’d love to see you and love you repeatedly."</p>
+    <p class="masked-text">"I want to keep you forever my love, please don’t ever leave me. I know that I am not the best person for you, but I know how to love you more than anything. I love you ❤️"</p>
+    <p class="masked-text">To my sweet lovely cutie patotiee everything you do, said, and caring.. you have melted my isolated heart. I love you so much.</p>
+    <p class="masked-text">Thank you.. you are the best. I am still learning and continue working on so much things and you’re my fuel for my mind and heart. I will make you my inspiration for this..</p>
+    <p class="masked-text">I am still learning and continue fixing this website.. 🥰</p>
+
   </div>
 
-  <!-- Bootstrap JS and jQuery (optional, for Bootstrap features) -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
+
   <script>
-    // Intersection Observer API
-    const headerElements = document.querySelectorAll('h1');
+    // Intersection Observer API for fade-in effects
+    const headerElements = document.querySelectorAll('h1, h2');
     const paragraphElements = document.querySelectorAll('p');
-    const tables = document.querySelectorAll('.table');
-    const options = {
-      threshold: 0.5
-    };
+    const tables = document.querySelectorAll('table');
+
+    const options = { threshold: 0.5 };
 
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -275,12 +226,9 @@
         }
       });
     }, options);
+    tables.forEach(table => observer.observe(table));
 
-    tables.forEach(table => {
-      observer.observe(table);
-    });
-
-    const observer1 = new IntersectionObserver(entries => {
+    const observerHeaders = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('header-visible');
@@ -289,12 +237,9 @@
         }
       });
     }, options);
+    headerElements.forEach(header => observerHeaders.observe(header));
 
-    headerElements.forEach(header => {
-      observer.observe(header);
-    });
-
-    const observer2 = new IntersectionObserver(entries => {
+    const observerParagraphs = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
           entry.target.classList.add('paragraph-visible');
@@ -303,10 +248,7 @@
         }
       });
     }, options);
-
-    paragraphElements.forEach(paragraph => {
-      observer2.observe(paragraph);
-    });
+    paragraphElements.forEach(paragraph => observerParagraphs.observe(paragraph));
   </script>
 </body>
 </html>
