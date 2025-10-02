@@ -1,254 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Leo's Profile - Van Lieouein Delos Santos</title>
-
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #1e1e1e;
-      color: #f0f0f0;
-    }
-    h1, h2 {
-      text-align: center;
-      background-color: black;
-      color: white;
-      border-radius: 20px;
-      opacity: 0;
-      transition: opacity 2s;
-      padding: 15px;
-    }
-    h2 {
-      background-color: transparent;
-      color: #d4af37;
-      margin-top: 25px;
-    }
-    .background-video {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transform: translate(-50%, -50%);
-      z-index: -1;
-    }
-    p {
-      font-size: 18px;
-      line-height: 1.6;
-      margin-top: 1.5em;
-      opacity: 0;
-      transition: opacity 2s;
-    }
-    table {
-      margin: 20px auto;
-      border-collapse: collapse;
-      width: 85%;
-      background-color: #333;
-      opacity: 0;
-      transition: opacity 1s;
-      color: #d4af37;
-    }
-    th, td {
-      padding: 12px;
-      border: 1px solid #555;
-      text-align: left;
-      transition: background-color 2s ease;
-    }
-    th {
-      background-color: #d4af37;
-      color: #1e1e1e;
-    }
-    tr:hover {
-      background-color: #555;
-    }
-    .masked-text {
-      background-color: black;
-      color: white;
-      border-radius: 20px;
-      opacity: 0.5;
-      padding: 10px;
-      display: inline-block;
-      margin-top: 10px;
-    }
-    .header-visible,
-    .paragraph-visible,
-    .table-row-visible {
-      opacity: 1;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Van Lieouein Delos Santos | Web Developer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.net.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+        }
+        .gradient-text {
+            background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+            background: rgba(15, 23, 42, 0.7);
+            backdrop-filter: blur(10px);
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(59, 130, 246, 0.2);
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -8px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: #3b82f6;
+        }
+        .skill-pill {
+            transition: all 0.3s ease;
+        }
+        .skill-pill:hover {
+            transform: scale(1.05);
+        }
+        .social-icon {
+            transition: all 0.3s ease;
+        }
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+        .slide {
+            scroll-snap-align: start;
+            flex: 0 0 100%;
+        }
+        .slider-container {
+            scroll-snap-type: x mandatory;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1 class="mt-5">Hi There, I'm Leo 😄 (Van Lieouein Delos Santos)</h1>
+    <div id="vanta-bg" class="fixed inset-0 z-0"></div>
 
-    <h2>Contact Information</h2>
-    
-    <p>Contact Number: +63 956 785 9971</p>
-    <p>Email: <a href="mailto:Leod419@gmail.com" style="color:#d4af37;">Leod419@gmail.com</a></p>
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 right-0 z-50 bg-slate-900 bg-opacity-80 backdrop-blur-md py-4">
+        <div class="container mx-auto px-6 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gradient-text">Van Lieouein</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-slate-200 hover:text-blue-400 transition">About</a>
+                <a href="#skills" class="text-slate-200 hover:text-blue-400 transition">Skills</a>
+                <a href="#projects" class="text-slate-200 hover:text-blue-400 transition">Projects</a>
+                <a href="#experience" class="text-slate-200 hover:text-blue-400 transition">Experience</a>
+                <a href="#contact" class="text-slate-200 hover:text-blue-400 transition">Contact</a>
+            </div>
+            <button class="md:hidden text-slate-200">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+    </nav>
 
-    <h2>Personal Details</h2>
-    <table>
-      <tbody>
-         
-        <tr><th>Place of Birth</th><td>Meycauyan, Bulacan</td></tr>
-        <tr><th>Height</th><td>5’8”</td></tr>
-         
-        <tr><th>Religion</th><td>Roman Catholic</td></tr>
-        <tr><th>Gender</th><td>Male</td></tr>
-        <tr><th>Languages/Dialects</th><td>Tagalog & English</td></tr>
-        <tr><th>Citizenship</th><td>Filipino</td></tr>
-        <tr><th>Civil Status</th><td>Single</td></tr>
-      </tbody>
-    </table>
+    <!-- Hero Section -->
+    <section class="min-h-screen flex flex-col justify-center items-center text-center relative z-10 px-4">
+        <div class="mb-8 floating">
+            <div class="w-32 h-32 md:w-40 md:h-40 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 mx-auto flex items-center justify-center">
+                <div class="w-28 h-28 md:w-36 md:h-36 rounded-full bg-slate-900 flex items-center justify-center">
+                    <span class="text-4xl font-bold gradient-text">VL</span>
+                </div>
+            </div>
+        </div>
+        <h1 class="text-4xl md:text-6xl font-bold mb-4">Van Lieouein Delos Santos</h1>
+        <div class="relative inline-block mb-8">
+            <h2 class="text-xl md:text-2xl font-light text-slate-300 inline-block">
+                <span id="typing-text" class="gradient-text">Web Developer</span>
+                <span class="typing-cursor">|</span>
+            </h2>
+        </div>
+        <div class="flex flex-wrap justify-center gap-4">
+            <a href="#projects" class="cyber-button px-8 py-4 text-lg font-bold rounded-full bg-gradient-to-r from-[#00f0ff] to-[#ff00f5] text-[#0a0a12] hover:text-blue-400 transition">View My Work</a>
+	    
+            <a href="#contact" class="px-6 py-3 border border-blue-400 rounded-full font-medium text-blue-400 hover:bg-blue-500 hover:bg-opacity-10 transition">Contact Me</a>
+	    <a href="#contact" class="cyber-button px-8 py-4 text-lg font-bold rounded-full bg-gradient-to-r from-[#ff00f5] to-[#00f0ff] text-[#0a0a12] hover:text-blue-400 transition">Hire Me</a>
+        </div>
+        <a href="#about" class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <i data-feather="chevron-down" class="text-blue-400 w-8 h-8"></i>
+        </a>
+    </section>
 
-    <h2>Educational Background</h2>
-    <table>
-      <tbody>
-        <tr><th>Tertiary</th><td>Bachelor of Science in Information Technology<br />University of Perpetual Help System - GMA Campus, San Gabriel, GMA Cavite<br />S.Y. 2012 – 2018</td></tr>
-        <tr><th>Secondary</th><td>Christ The King College of Cavite, Salawag, Dasmariñas, Cavite<br />S.Y. 2008 – 2012</td></tr>
-        <tr><th>Elementary</th><td>Paliparan 3 Elementary School, Dasmariñas, Cavite<br />S.Y. 2005 – 2007</td></tr>
-      </tbody>
-    </table>
+    <!-- About Section -->
+    <section id="about" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">About Me</h2>
+            <div class="max-w-4xl mx-auto bg-slate-800 bg-opacity-70 rounded-xl p-8 md:p-10 backdrop-blur-sm">
+                <div class="grid md:grid-cols-2 gap-8 items-center">
+                    <div>
+                        <p class="text-lg mb-6 text-slate-300">
+                            Hello! I'm Van Lieouein, a passionate web developer with expertise in building modern, responsive websites and applications. I specialize in creating clean, efficient code that delivers exceptional user experiences.
+                        </p>
+                        <p class="text-lg mb-6 text-slate-300">
+                            With a background in both design and development, I bring a unique perspective to every project. I'm constantly learning new technologies and techniques to stay at the forefront of web development.
+                        </p>
+                        <p class="text-lg text-slate-300">
+                            When I'm not coding, you can find me exploring new technologies, contributing to open-source projects, or enjoying outdoor activities to recharge my creative energy.
+                        </p>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="card-hover bg-slate-700 p-4 rounded-lg">
+                            <i data-feather="code" class="w-8 h-8 text-blue-400 mb-3"></i>
+                            <h3 class="font-bold text-lg mb-2">Clean Code</h3>
+                            <p class="text-sm text-slate-300">Writing maintainable, efficient code following best practices</p>
+                        </div>
+                        <div class="card-hover bg-slate-700 p-4 rounded-lg">
+                            <i data-feather="smartphone" class="w-8 h-8 text-purple-400 mb-3"></i>
+                            <h3 class="font-bold text-lg mb-2">Responsive Design</h3>
+                            <p class="text-sm text-slate-300">Creating flawless experiences across all devices</p>
+                        </div>
+                        <div class="card-hover bg-slate-700 p-4 rounded-lg">
+                            <i data-feather="zap" class="w-8 h-8 text-blue-400 mb-3"></i>
+                            <h3 class="font-bold text-lg mb-2">Performance</h3>
+                            <p class="text-sm text-slate-300">Optimizing for speed and efficiency</p>
+                        </div>
+                        <div class="card-hover bg-slate-700 p-4 rounded-lg">
+                            <i data-feather="users" class="w-8 h-8 text-purple-400 mb-3"></i>
+                            <h3 class="font-bold text-lg mb-2">Collaboration</h3>
+                            <p class="text-sm text-slate-300">Working effectively in team environments</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h2>Key Strengths & Competencies</h2>
-    <ul>
-      <li>Good interpersonal skills</li>
-      <li>Time Flexible</li>
-      <li>Eager to learn</li>
-      <li>Fast learner</li>
-    </ul>
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 relative z-10 bg-slate-900 bg-opacity-70">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">My Skills</h2>
+            
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold mb-6 text-blue-400">Frontend Development</h3>
+                <div class="flex flex-wrap gap-3">
+                    <div class="skill-pill px-4 py-2 bg-slate-800 rounded-full flex items-center">
+                        <i data-feather="code" class="w-4 h-4 mr-2 text-blue-400"></i>
+                        <span>HTML5</span>
+                    </div>
+                    <div class="skill-pill px-4 py-2 bg-slate-800 rounded-full flex items-center">
+                        <i data-feather="code" class="w-4 h-4 mr-2 text-blue-400"></i>
+                        <span>CSS3</span>
+                    </div>
+                    <div class="skill-pill px-4 py-2 bg-slate-800 rounded-full flex items-center">
+                        <i data-feather="code" class="w-4 h-4 mr-2 text-blue-400"></i>
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="skill-pill px-4 py-2 bg-slate-800 rounded-full flex items-center">
+                        <i data-feather="code" class="w-4 h-4 mr-2 text-blue-400"></i>
+                        <span>React</span>
+                    </div>
+                    <div class="skill-pill px-4 py-2 bg-slate-800 rounded-full flex items-center">
+                        <i data-feather="code" class="w-4 h-4 mr-2 text-blue-400"></i>
+                        <span>Tailwind CSS</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mb-16">
+                <h3 class="text-xl font-semibold mb-6 text-purple-400">Backend Development</h3>
+                <div class="flex flex-wrap gap-3">
+                    <div class="skill-pill px-4 py-2 bg-slate-800 rounded-full flex items-center">
+                        <i data-feather="server" class="w-4 h-4 mr-2 text-purple-400"></i>
+                        <span>Node.js</span>
+                    </div>
+                    <div class="skill-pill px-4 py-2 bg-slate-800 rounded-full flex items-center">
+                        <i data-feather="server" class="w-4 h-4 mr-2 text-purple-400"></i>
+                        <span>Express</span>
+                    </div>
+                    <div class="skill-pill px-4 py-2 bg-slate-800 rounded-full flex items-center">
+                        <i data-feather="server" class="w-4 h-4 mr-2 text-purple-400"></i>
+                        <span>MongoDB</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div>
+                <h3 class="text-xl font-semibold mb-6 text-blue-400">Other Technologies</h3>
+                <div class="flex flex-wrap gap-3">
+                    <div class="skill-pill px-4 py-2 bg-slate-800 rounded-full flex items-center">
+                        <i data-feather="git-merge" class="w-4 h-4 mr-2 text-blue-400"></i>
+                        <span>Git</span>
+                    </div>
+                    <div class="skill-pill px-4 py-2 bg-slate-800 rounded-full flex items-center">
+                        <i data-feather="box" class="w-4 h-4 mr-2 text-blue-400"></i>
+                        <span>Docker</span>
+                    </div>
+                    <div class="skill-pill px-4 py-2 bg-slate-800 rounded-full flex items-center">
+                        <i data-feather="terminal" class="w-4 h-4 mr-2 text-blue-400"></i>
+                        <span>Linux</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <h2>Skills</h2>
-    <table>
-      <thead>
-        <tr><th>Skill</th><th>Details</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Programming</td><td>C++, Java, Kotlin, Visual Basic, and HTML</td></tr>
-        <tr><td>Computer Assembling and Maintenance</td><td>Experienced</td></tr>
-        <tr><td>Communication & Interpersonal Skills</td><td>Excellent</td></tr>
-        <tr><td>Technical Concept Generation</td><td>Clear & Precise</td></tr>
-        <tr><td>Microsoft Office</td><td>Word, Excel, PowerPoint - Technically Proficient</td></tr>
-      </tbody>
-    </table>
+    <!-- Projects Section -->
+    <section id="projects" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Featured Projects</h2>
+            
+            <div class="slider-container flex overflow-x-auto snap-x snap-mandatory gap-6 pb-8">
+                <!-- Project 1 -->
+                <div class="slide">
+                    <div class="card-hover max-w-3xl mx-auto rounded-xl overflow-hidden border border-slate-700">
+                        <div class="md:flex">
+                            <div class="md:w-1/2 bg-gradient-to-br from-blue-500 to-purple-500 p-8 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i data-feather="shopping-cart" class="w-12 h-12 text-white mb-4 mx-auto"></i>
+                                    <h3 class="text-2xl font-bold text-white">E-Commerce Platform</h3>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 p-8 bg-slate-800">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="text-xl font-bold text-white">Modern E-Commerce Store</h3>
+                                    <a href="#" class="text-blue-400 hover:text-blue-300">
+                                        <i data-feather="external-link" class="w-5 h-5"></i>
+                                    </a>
+                                </div>
+                                <p class="text-slate-300 mb-6">
+                                    A full-featured e-commerce platform built with React, Node.js, and MongoDB. Includes product listings, shopping cart, user authentication, and payment processing.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 rounded-full bg-blue-500 bg-opacity-20 text-blue-400 text-sm">React</span>
+                                    <span class="px-3 py-1 rounded-full bg-blue-500 bg-opacity-20 text-blue-400 text-sm">Node.js</span>
+                                    <span class="px-3 py-1 rounded-full bg-blue-500 bg-opacity-20 text-blue-400 text-sm">MongoDB</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Project 2 -->
+                <div class="slide">
+                    <div class="card-hover max-w-3xl mx-auto rounded-xl overflow-hidden border border-slate-700">
+                        <div class="md:flex">
+                            <div class="md:w-1/2 bg-gradient-to-br from-purple-500 to-blue-500 p-8 flex items-center justify-center">
+                                <div class="text-center">
+                                    <i data-feather="users" class="w-12 h-12 text-white mb-4 mx-auto"></i>
+                                    <h3 class="text-2xl font-bold text-white">Social Media Dashboard</h3>
+                                </div>
+                            </div>
+                            <div class="md:w-1/2 p-8 bg-slate-800">
+                                <div class="flex justify-between items-start mb-4">
+                                    <h3 class="text-xl font-bold text-white">Social Analytics Platform</h3>
+                                    <a href="#" class="text-purple-400 hover:text-purple-300">
+                                        <i data-feather="external-link" class="w-5 h-5"></i>
+                                    </a>
+                                </div>
+                                <p class="text-slate-300 mb-6">
+                                    A comprehensive dashboard for tracking social media metrics across multiple platforms. Features real-time data visualization, customizable reports, and team collaboration tools.
+                                </p>
+                                <div class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1 rounded-full bg-purple-500 bg-opacity-20 text-purple-400 text-sm">Vue.js</span>
+                                    <span class="px-3 py-1 rounded-full bg-purple-500 bg-opacity-20 text-purple-400 text-sm">Firebase</span>
+                                    <span class="px-3 py-1 rounded-full bg-purple-500 bg-opacity-20 text-purple-400 text-sm">D3.js</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="flex justify-center mt-8 space-x-2">
+                <button class="w-3 h-3 rounded-full bg-blue-500"></button>
+                <button class="w-3 h-3 rounded-full bg-slate-600"></button>
+            </div>
+        </div>
+    </section>
 
-    <h2>Certificates</h2>
-    <ul>
-      <li><p class="masked-text">Mobile Android Programming (2013)</p></li>
-      <li><p class="masked-text">PLC Operation (2013)</p></li>
-      <li><p class="masked-text">ROBOTICS (2014)</p></li>
-      <li><p class="masked-text">Cloud Computing (2014)</p></li>
-      <li><p class="masked-text">Cyber Security (2015)</p></li>
-      <li><p class="masked-text">Unleash Your Potential (2014)</p></li>
-      <li><p class="masked-text">Seminar on Thesis and Capstone Writing for ITE Students and Advisers (2016)</p></li>
-    </ul>
+    <!-- Experience Section -->
+    <section id="experience" class="py-20 relative z-10 bg-slate-900 bg-opacity-70">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Professional Experience</h2>
+            
+            <div class="max-w-3xl mx-auto relative pl-8">
+                <div class="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-purple-500"></div>
+                
+		<div class="relative mb-12">
+                    <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-purple-500"></div>
+                    <div class="card-hover rounded-xl p-6 border border-purple-500 bg-slate-800">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-purple-400">Web Development Intern</h3>
+                            <span class="text-sm text-purple-400">2025 - Present</span>
+                        </div>
+                        <h4 class="text-lg text-blue-400 mb-3">Digital Creative Agency</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                            <li>Assisted in building client websites using HTML, CSS, and JavaScript</li>
+                            <li>Implemented responsive designs for various screen sizes</li>
+                            <li>Participated in code reviews and team meetings</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="relative mb-12">
+                    <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-blue-500"></div>
+                    <div class="card-hover rounded-xl p-6 border border-blue-500 bg-slate-800">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-blue-400">Design/CAD Operator</h3>
+                            <span class="text-sm text-blue-400">2020 - 2025</span>
+                        </div>
+                        <h4 class="text-lg text-purple-400 mb-3">Quest-Air Technology Philippines, Inc.</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                            <li>Demonstrated expertise in technical drafting and computer-aided design, producing precise design documentation to support engineering and project development.</li>
+                            
+                        </ul>
+                    </div>
+                </div>
+		
+                
+                <div class="relative mb-12">
+                    <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-purple-500"></div>
+                    <div class="card-hover rounded-xl p-6 border border-purple-500 bg-slate-800">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-purple-400">Design/CAD Operator</h3>
+                            <span class="text-sm text-purple-400">2019 - 2020</span>
+                        </div>
+                        <h4 class="text-lg text-blue-400 mb-3">VEGA Project Philippines Inc.</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                            <li>Applied technical drafting skills and CAD expertise to create detailed design documentation for various projects.</li>
+                        </ul>
+                    </div>
+                </div>
 
-    <h2>Work Experience</h2>
-    <table>
-      <thead>
-        <tr><th>Position</th><th>Company</th><th>Duration</th></tr>
-      </thead>
-      <tbody>
-        <tr><td>Design / CAD Operator</td><td>Quest-Air Technology Phils., Inc.</td><td>March 20, 2020 – Sept 22, 2025</td></tr>
-        <tr><td>Design / CAD Operator</td><td>VEGA Project Philippines Inc.</td><td>May 17, 2019 – Nov 17, 2019</td></tr>
-        <tr><td>Accounting Auditor</td><td>Sonic Steel Industries Inc.</td><td>Aug 7, 2018 – May 10, 2019</td></tr>
-        <tr><td>On Job Trainee</td><td>P.A. Alvarez Properties and Development Corporation</td><td>July 15, 2016 – March 17, 2017</td></tr>
-      </tbody>
-    </table>
+		<div class="relative mb-12">
+                    <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-blue-500"></div>
+                    <div class="card-hover rounded-xl p-6 border border-blue-500 bg-slate-800">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-blue-400">Accounting Auditor</h3>
+                            <span class="text-sm text-blue-400">2018 - 2019</span>
+                        </div>
+                        <h4 class="text-lg text-purple-400 mb-3">Sonic Steel Industries Inc.</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                            <li>nsured financial accuracy and regulatory compliance through thorough auditing processes and attention to detail.</li>
+                        </ul>
+                    </div>
+                </div>
+		<div class="relative mb-12">
+                    <div class="absolute -left-2 top-0 w-4 h-4 rounded-full bg-purple-500"></div>
+                    <div class="card-hover rounded-xl p-6 border border-purple-500 bg-slate-800">
+                        <div class="flex justify-between items-center mb-2">
+                            <h3 class="text-xl font-bold text-purple-400">Design/CAD Operator</h3>
+                            <span class="text-sm text-purple-400">Early Career Intern</span>
+                        </div>
+                        <h4 class="text-lg text-blue-400 mb-3">P.A. Alvarez Properties and Development Corporation</h4>
+                        <ul class="list-disc pl-5 space-y-2 text-slate-300">
+                            <li>AStarted career with hands-on training in property development, building foundational professional skills.</li>
+                        </ul>
+                    </div>
+                </div>
 
-    <h2>Character References</h2>
-    <table>
-      <thead>
-        <tr><th>Name</th><th>Position</th><th>Contact Info</th></tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Mrs. Mary Grace N. Barbecho</td>
-          <td>Thesis Adviser, University of Perpetual Help System Jonelta-GMA Campus</td>
-          <td>+639192043978</td>
-        </tr>
-        <tr>
-          <td>Ms. Gestine May C. Abulencia</td>
-          <td>Human Resource Manager, Quest-Air Technology Phils., Inc.</td>
-          <td>+63965-956-8578</td>
-        </tr>
-      </tbody>
-    </table>
+            </div>
+        </div>
+    </section>
 
-    <video class="background-video" autoplay playsinline muted loop>
-      <source src="https://www.similarweb.com/corp/wp-content/themes/similarcms_2_4/images/our-data/od-synthesis-bg-video.webm" type="video/webm" />
-      <img src="https://www.similarweb.com/corp/wp-content/themes/similarcms_2_4/images/our-data/od-synthesis-bg.png" alt="Synthesis" />
-    </video>
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 relative z-10">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold mb-12 text-center gradient-text">Get In Touch</h2>
+            
+            <div class="max-w-2xl mx-auto bg-slate-800 bg-opacity-70 rounded-xl p-8 md:p-10 backdrop-blur-sm">
+                <p class="text-xl text-center mb-8 text-slate-300">
+                    Have a project in mind or want to discuss potential opportunities? I'd love to hear from you!
+                </p>
+                
+                <form class="space-y-6">
+                    <div>
+                        <label for="name" class="block text-sm font-medium text-slate-300 mb-1">Name</label>
+                        <input type="text" id="name" class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+                    </div>
+                    
+                    <div>
+                        <label for="email" class="block text-sm font-medium text-slate-300 mb-1">Email</label>
+                        <input type="email" id="email" class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white">
+                    </div>
+                    
+                    <div>
+                        <label for="message" class="block text-sm font-medium text-slate-300 mb-1">Message</label>
+                        <textarea id="message" rows="5" class="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 text-white"></textarea>
+                    </div>
+                    
+                    <button type="submit" class="w-full py-3 bg-gradient-to-r from-blue-500 to-purple-500 rounded-lg font-medium text-white hover:shadow-lg transition">
+                        Send Message
+                    </button>
+                </form>
+                
+                <div class="mt-12 text-center">
+                    <p class="text-slate-400 mb-6">Or connect with me on:</p>
+                    <div class="flex justify-center space-x-6">
+                        <a href="#" class="social-icon w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center hover:bg-blue-500 transition">
+                            <i data-feather="mail" class="text-white"></i>
+                        </a>
+                        <a href="#" class="social-icon w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center hover:bg-blue-700 transition">
+                            <i data-feather="linkedin" class="text-white"></i>
+                        </a>
+                        <a href="#" class="social-icon w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center hover:bg-gray-800 transition">
+                            <i data-feather="github" class="text-white"></i>
+                        </a>
+                        <a href="#" class="social-icon w-12 h-12 rounded-full bg-slate-700 flex items-center justify-center hover:bg-blue-400 transition">
+                            <i data-feather="twitter" class="text-white"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Masked text personal messages -->
-    <p class="masked-text">From my Sweet lovely cutie patotie :</p>
-    <p class="masked-text">"Hi to you there 😊"</p>
-    <p class="masked-text">"Just wondering these time how grateful I am to have you in my life, also I want to say thanks for all the unconditional love and support. I know how things get tough for us right now. But still, I am really happy to be with you."</p>
-    <p class="masked-text">"Thank you for accepting me the way I am!"</p>
-    <p class="masked-text">"Thank you for not judging me behind my dark story."</p>
-    <p class="masked-text">"Thank you for everything you’ve done for me."</p>
-    <p class="masked-text">"Thank you for reminding how pretty I am genuinely."</p>
-    <p class="masked-text">"Thank you for taking care of me and spoiling me."</p>
-    <p class="masked-text">"Thank you for treating me like a Queen and loving me like an empress."</p>
-    <p class="masked-text">"Thank you for sharing tears with me."</p>
-    <p class="masked-text">"Thank you for the kind gesture to share with, all your act matters 😊"</p>
-    <p class="masked-text">"May the Lord anoint you with His favor and may all the work of your hands prosper. May the Lord blesses you more with the strength and grace. Again, thank you for your unconditional love 😘😘"</p>
-    <p class="masked-text">"If Lord permits, I’d love to see you and love you repeatedly."</p>
-    <p class="masked-text">"I want to keep you forever my love, please don’t ever leave me. I know that I am not the best person for you, but I know how to love you more than anything. I love you ❤️"</p>
-    <p class="masked-text">To my sweet lovely cutie patotiee everything you do, said, and caring.. you have melted my isolated heart. I love you so much.</p>
-    <p class="masked-text">Thank you.. you are the best. I am still learning and continue working on so much things and you’re my fuel for my mind and heart. I will make you my inspiration for this..</p>
-    <p class="masked-text">I am still learning and continue fixing this website.. 🥰</p>
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-900 bg-opacity-90 relative z-10">
+        <div class="container mx-auto px-4 text-center">
+            <p class="text-slate-400 mb-2">© 2023 Van Lieouein Delos Santos. All rights reserved.</p>
+            <p class="text-slate-500 text-sm">Built with passion and lots of coffee</p>
+        </div>
+    </footer>
 
-  </div>
+    <script>
+        feather.replace();
+        
+        // Vanta.js background
+        VANTA.NET({
+            el: "#vanta-bg",
+            mouseControls: true,
+            touchControls: true,
+            gyroControls: false,
+            minHeight: 200.00,
+            minWidth: 200.00,
+            scale: 1.00,
+            scaleMobile: 1.00,
+            color: 0x3b82f6,
+            backgroundColor: 0x0f172a,
+            points: 12,
+            maxDistance: 20,
+            spacing: 15
+        });
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+        // Typing animation
+        const typingTexts = ["Junior Web Developer", "Frontend Engineer", "JavaScript Specialist", "Problem Solver" , "Machine Learning Enthusiast"];
+        let currentTextIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+        let typingSpeed = 100;
 
-  <script>
-    // Intersection Observer API for fade-in effects
-    const headerElements = document.querySelectorAll('h1, h2');
-    const paragraphElements = document.querySelectorAll('p');
-    const tables = document.querySelectorAll('table');
+        function typeWriter() {
+            const currentText = typingTexts[currentTextIndex];
+            const typingElement = document.getElementById('typing-text');
+            const cursorElement = document.querySelector('.typing-cursor');
+            
+            if (isDeleting) {
+                typingElement.textContent = currentText.substring(0, charIndex - 1);
+                charIndex--;
+                typingSpeed = 50;
+            } else {
+                typingElement.textContent = currentText.substring(0, charIndex + 1);
+                charIndex++;
+                typingSpeed = 100;
+            }
 
-    const options = { threshold: 0.5 };
+            if (!isDeleting && charIndex === currentText.length) {
+                isDeleting = true;
+                typingSpeed = 1500;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                currentTextIndex = (currentTextIndex + 1) % typingTexts.length;
+                typingSpeed = 500;
+            }
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('table-row-visible');
-        } else {
-          entry.target.classList.remove('table-row-visible');
+            cursorElement.style.opacity = (cursorElement.style.opacity === '0') ? '1' : '0';
+            
+            setTimeout(typeWriter, typingSpeed);
         }
-      });
-    }, options);
-    tables.forEach(table => observer.observe(table));
 
-    const observerHeaders = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('header-visible');
-        } else {
-          entry.target.classList.remove('header-visible');
-        }
-      });
-    }, options);
-    headerElements.forEach(header => observerHeaders.observe(header));
+        // Start the typing animation
+        setTimeout(typeWriter, 1000);
 
-    const observerParagraphs = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('paragraph-visible');
-        } else {
-          entry.target.classList.remove('paragraph-visible');
+        // Project slider navigation
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('#projects button');
+        let currentSlide = 0;
+
+        function goToSlide(n) {
+            slides.forEach(slide => {
+                slide.style.transform = `translateX(-${n * 100}%)`;
+            });
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('bg-blue-500', index === n);
+                dot.classList.toggle('bg-slate-600', index !== n);
+            });
+            currentSlide = n;
         }
-      });
-    }, options);
-    paragraphElements.forEach(paragraph => observerParagraphs.observe(paragraph));
-  </script>
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => goToSlide(index));
+        });
+
+        // Mobile menu toggle
+        const menuButton = document.querySelector('nav button');
+        menuButton.addEventListener('click', () => {
+            const menu = document.querySelector('nav div');
+            menu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
