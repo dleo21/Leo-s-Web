@@ -1,5 +1,5 @@
 # Van Lieouein delos santos
-leod419@gmail.com • +63 9567859971 • Taguig, NCR https://dleo21.github.io/Leo-s-Web/
+leod419@gmail.com • +63 9567859971 • Taguig, NCR https://dleo21.github.io/Leo-s-Web/?
 
 ## Summary
 Analytical data specialist with 5+ years combining accounting audit and technical data-handling experience. Skilled in SQL, Microsoft Excel, Python (pandas), data cleaning, validation, and automation to produce audit-ready reference data and repeatable reporting. Proven record reconciling transactional records, performing compliance-oriented checks, and building workflow automations; seeking to apply these strengths to reference-data validation, escalation support, and operational controls as a Reference Data Services Intermediate Analyst at Citi.
